@@ -1,6 +1,8 @@
 import React from "react";
 import headshot from "../assets/headshot.jpg";
 
+console.log("headshot", headshot);
+
 const Hero = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
