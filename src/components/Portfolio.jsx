@@ -2,6 +2,7 @@ import React from "react";
 import WOMProject from "./WOMProject";
 import Tacos from "./Tacos";
 import Chat from "./Chat";
+import Transfer from "./Transfer";
 
 const settings = {
   dots: true,
@@ -33,9 +34,12 @@ function Portfolio() {
           In my github, you can find some of my college work, along with my
           portfolio pieces.
         </h1>
+        <Transfer />
+        <Chat />
         <WOMProject />
         <Tacos />
-        <Chat />
+        
+       
       </div>
     </div>
   );
