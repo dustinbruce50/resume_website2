@@ -4,7 +4,7 @@ import { Document, Page } from "react-pdf";
 
 import { pdfjs } from "react-pdf";
 
-pdfjs.GlobalWorkerOptions.workerSrc = "/public/pdf.worker.mjs";
+pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.mjs";
 
 const PdfViewer = ({ pdfFiles }) => {
   const [modalOpen, setModalOpen] = useState(false);
