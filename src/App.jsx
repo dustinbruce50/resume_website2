@@ -1,25 +1,19 @@
-import "./App.css";
-
-import "../node_modules/slick-carousel/slick/slick-theme.css";
-import "../node_modules/slick-carousel/slick/slick.css";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Portfolio from "./components/Portfolio.jsx";
-import Weather from "./components/Weather.jsx";
-import Movies from "./components/Movies.jsx";
+import HomePage from "./views/HomePage";
+import DataScienceProjects from "./views/DataScienceProjects";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import "react-pdf/dist/esm/Page/TextLayer.css";
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <Navbar />
-      <Hero />
-      <About />
-      <Portfolio />
-      <Weather />
-      <Movies />
-    </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects" element={<DataScienceProjects />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

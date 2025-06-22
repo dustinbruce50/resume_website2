@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.react-pdf__Page {
+  @apply relative inline-block !important;
+}
+
+.react-pdf__Page__textContent {
+  @apply absolute inset-0 !important;
+  color: white !important;
+  user-select: text;
+}
+
+.react-pdf__Page__annotations {
+  @apply absolute inset-0 !important;
+}
