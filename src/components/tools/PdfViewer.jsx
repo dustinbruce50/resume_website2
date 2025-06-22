@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PdfModal from "./PdfModal";
 import { Document, Page } from "react-pdf";
 
@@ -15,6 +15,21 @@ const PdfViewer = ({ pdfFiles }) => {
     setModalOpen(true);
   };
 
+  const containerRef = useRef(null);
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        const newWidth = containerRef.current.offsetWidth;
+        setWidth(newWidth);
+      }
+    };
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
   return (
     <>
       {pdfFiles.map(({ id, file, analysis }) => (
@@ -24,12 +39,13 @@ const PdfViewer = ({ pdfFiles }) => {
             modalOpen ? "pointer-events-none opacity-50" : ""
           }`}
           onClick={() => openModal(file)}
+          ref={containerRef}
         >
           <Document file={file} loading="Loading PDF...">
-            <Page pageNumber={1} width={680} />
+            <Page pageNumber={1} width={width} />
           </Document>
 
-          <p>{analysis}</p>
+          <div>{analysis}</div>
         </div>
       ))}
 

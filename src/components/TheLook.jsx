@@ -256,7 +256,9 @@ const TheLook = () => {
             my GitHub
           </a>
         </h2>
-        <PdfViewer pdfFiles={pdfFiles} />
+        <div className="w-full max-w-full">
+          <PdfViewer pdfFiles={pdfFiles} />
+        </div>
       </div>
     </>
   );

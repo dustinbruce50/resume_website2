@@ -4,6 +4,7 @@
 
 .react-pdf__Page {
   @apply relative inline-block !important;
+  width: 10% !important;
 }
 
 .react-pdf__Page__textContent {
