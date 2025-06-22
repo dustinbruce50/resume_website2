@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import PdfViewer from "../components/tools/pdfviewer.jsx";
+import PdfViewer from "../components/tools/PdfViewer.jsx";
 
-const pdfFiles = 
-
- 
-  [
+const pdfFiles = [
   {
     id: 1,
     file: "/thelookpdfs/TheLook Data Analysis-1_cropped.pdf",
@@ -231,7 +228,6 @@ const pdfFiles =
     ),
   },
 ];
-
 
 const TheLook = () => {
   return (
